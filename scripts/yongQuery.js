@@ -1,8 +1,8 @@
-
-
-var yongQuery = function (selector, context) {
-
+function yongQuery (a,c) {
+	if (a && a.constructor == Function) {
+		return yongQuery(document).ready(a);
+		console.log('function Constructor');
+	}
 }
 
-window.yongQuery = window.$ = yongQuery;
-console.log($);
+var $ = yongQuery;
