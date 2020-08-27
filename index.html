@@ -5,9 +5,14 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>yongQuery</title>s
+	<title>yongQuery</title>
 	<script src="./scripts/yongQuery.js"></script>
 <!--	<script src="./scripts/jquery-1.0.1.js"></script>-->
+	<style>
+		.z {width:200px;height:50px;margin:10px;background:grey;}
+		.t {background:red;}
+		.x {background:blue;}
+	</style>
 </head>
 <body>
 <div class="z"></div>
@@ -15,6 +20,8 @@
 <div class="z"></div>
 <div class="z"></div>
 <script>
+	console.log($('.z').hasClass('t'));
+	$('.z').addClass('t');
 </script>
 </body>
 </html>
