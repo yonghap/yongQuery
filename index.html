@@ -17,11 +17,18 @@
 <body>
 <div class="z"></div>
 <div class="z t x"></div>
+<div class="z">
+	<div class="a">
+		1
+	</div>
+</div>
 <div class="z"></div>
-<div class="z"></div>
+<button onclick="tg()">Button</button>
 <script>
-	console.log($('.z').hasClass('t'));
-	$('.z').addClass('t');
+	function tg() {
+		$('.z').toggleClass('a');
+	}
+	console.log($('.z').find('.a'));
 </script>
 </body>
 </html>
