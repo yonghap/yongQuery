@@ -1,55 +1,26 @@
-function yongQuery( selector, context ) {
-	this.elements = new Set(document.querySelectorAll(selector));
-	if ( window == this ) {
-		return new yongQuery(selector, context);
+(function (win) {
+	var global = win;
+	var doc = this.document;
+
+	var $ = function (params, context) {
+		return new yongQuery(params, context);
 	}
-}
-
-var $ = yongQuery;
-
-
-yongQuery.fn = yongQuery.prototype = {
-	version : '1.0',
-	// CLASS
-	hasClass : function ( context ) {
-		for (let item of this.elements) {
-			if (item.classList.value.indexOf(context) >= 0) {
-				return 'true';
+	var yongQuery = function(params, context) {
+		var currentContext = doc;
+		console.log(params);
+		console.log(context);
+		// 두번쨰 매개변수가 있을 때 노드타입을 판별
+		if (context) {
+			if (context.nodeType) {
+				currentContext = context;
 			} else {
-				return 'false';
+				currentContext = doc.querySelector(context);
 			}
-		}
-	},
-	addClass : function ( context ) {
-		for (let item of this.elements) {
-			if (item.classList.value.indexOf(context) > -1) {
-			} else {
-				item.classList.add(context);
-			}
-		}
-	},
-	removeClass : function ( context ) {
-		for (let item of this.elements) {
-			if (item.classList.value.indexOf(context) > -1) {
-				item.classList.remove(context);
-			} else {
-			}
-		}
-	},
-	toggleClass : function ( context ) {
-		for (let item of this.elements) {
-			if (item.classList.value.indexOf(context) > -1) {
-				item.classList.remove(context);
-			} else {
-				item.classList.add(context);
-			}
-		}
-	},
-	// FIND
-	find : function ( context ) {
-		for (let item of this.elements) {
-			console.log(item.querySelector(context));
 		}
 	}
-}
+
+	$.fn = yongQuery.prototype;
+
+	global.$ = $;
+})(window);
 
