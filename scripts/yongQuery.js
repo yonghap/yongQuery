@@ -52,13 +52,12 @@
 		}
 
 		this.length = nodeLength;
-
 		return this;
 	}
 
 
 	$.fn = yongQuery.prototype;
-
+	// each
 	$.fn.each = function (callback) {
 		var len = this.length;
 
@@ -67,8 +66,26 @@
 		}
 		return this;
 	}
-
-
+	// html
+	$.fn.html = function(htmlString) {
+		if (htmlString) {
+			return this.each(function () {
+				this.innerHTML = htmlString;
+			})
+		} else {
+			return this[0].innerHTML;
+		}
+	}
+	// text
+	$.fn.text = function(textString) {
+		if (textString) {
+			return this.each(function () {
+				this.textContent = textString;
+			})
+		} else {
+			return this[0].textContent.trim();
+		}
+	}
 	global.$ = $;
 
 })(window);

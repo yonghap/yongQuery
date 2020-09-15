@@ -13,14 +13,15 @@
 <p>
 	Lorem.
 </p>
-<p>
+<div>
 	Lorem ipsum dolor sit amet.
-</p>
-
+</div>
 <script>
-	$('p').each(function () {
-
-	});
+	console.log($('p'));
+	console.log($('p').html());
+	console.log($('p').text());
+	$('p').html('Hello Html');
+	$('div').text('Hello Text');
 </script>
 </body>
 </html>
