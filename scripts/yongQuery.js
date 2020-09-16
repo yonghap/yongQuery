@@ -82,7 +82,11 @@
 				this.textContent = textString;
 			})
 		} else {
-			return this[0].textContent.trim();
+			var t = '';
+			this.each(function(i,item) {
+				t += item.textContent;
+			})
+			return t;
 		}
 	}
 	global.yQ = yQ;
