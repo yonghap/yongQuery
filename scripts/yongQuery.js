@@ -2,7 +2,7 @@
 	var global = win;
 	var doc = this.document;
 
-	var $ = function (params, context) {
+	var yQ = function (params, context) {
 		return new yongQuery(params, context);
 	}
 
@@ -50,16 +50,15 @@
 		for (var i = 0; i < nodeLength; i++) {
 			this[i] = nodes[i]
 		}
-
 		this.length = nodeLength;
 		return this;
 	}
 
 
-	$.fn = yongQuery.prototype;
+	yQ.fn = yongQuery.prototype;
 	// each
-	$.fn.each = function (callback) {
-		var len = this.length;
+	yQ.fn.each = function (callback) {
+		var len = this.length; // node의 길이
 
 		for (var i = 0; i < len; i++) {
 			callback.call(this[i], i, this[i]);
@@ -67,7 +66,7 @@
 		return this;
 	}
 	// html
-	$.fn.html = function(htmlString) {
+	yQ.fn.html = function(htmlString) {
 		if (htmlString) {
 			return this.each(function () {
 				this.innerHTML = htmlString;
@@ -77,7 +76,7 @@
 		}
 	}
 	// text
-	$.fn.text = function(textString) {
+	yQ.fn.text = function(textString) {
 		if (textString) {
 			return this.each(function () {
 				this.textContent = textString;
@@ -86,7 +85,7 @@
 			return this[0].textContent.trim();
 		}
 	}
-	global.$ = $;
+	global.yQ = yQ;
 
 })(window);
 

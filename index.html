@@ -7,21 +7,21 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>yongQuery</title>
 	<script src="./scripts/yongQuery.js"></script>
-	<!--<script src="./scripts/jquery-1.0.1.js"></script>-->
+	<script src="./scripts/jquery-3.5.1.js"></script>
 </head>
 <body>
 <p>
-	Lorem.
+	1.Lorem.
+</p>
+<p>
+	2.Lorem.
 </p>
 <div>
 	Lorem ipsum dolor sit amet.
 </div>
 <script>
-	console.log($('p'));
 	console.log($('p').html());
-	console.log($('p').text());
-	$('p').html('Hello Html');
-	$('div').text('Hello Text');
+	console.log(yQ('p').html());
 </script>
 </body>
 </html>
