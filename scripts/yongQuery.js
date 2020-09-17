@@ -89,6 +89,27 @@
 			return t;
 		}
 	}
+	yQ.fn.addClass = function(className) {
+		if (className) {
+			return this.each(function (i,item) {
+				if (item.classList.value.indexOf(className) > 0) {
+				} else {
+					item.classList.add(className);
+				}
+			})
+		}
+	}
+	yQ.fn.removeClass = function(className) {
+		if (className) {
+			return this.each(function (i,item) {
+				if (item.classList.value.indexOf(className) > 0) {
+
+				} else {
+					item.classList.remove(className);
+				}
+			})
+		}
+	}
 	global.yQ = yQ;
 
 })(window);

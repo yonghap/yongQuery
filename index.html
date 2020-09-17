@@ -10,7 +10,7 @@
 	<script src="./scripts/jquery-3.5.1.js"></script>
 </head>
 <body>
-<p>
+<p class="f">
 	1.Lorem.
 </p>
 <p>
@@ -25,6 +25,9 @@
 <script>
 	// console.log($('p').html());
 	// console.log(yQ('p').html());
+	$('p').addClass('t');
+	yQ('p').addClass('a');
+	yQ('p').removeClass('f');
 	console.log($('p').text());
 	console.log(yQ('p').text());
 </script>
