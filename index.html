@@ -19,12 +19,13 @@
 <p>
 	3.Lorem.
 </p>
-<div>
-	Lorem ipsum dolor sit amet.
-</div>
+<button type="button" onclick="toggle()">
+	ToggleClass
+</button>
 <script>
-	// console.log($('p').html());
-	// console.log(yQ('p').html());
+	function toggle() {
+		yQ('p').toggleClass('asd');
+	}
 	$('p').addClass('t');
 	yQ('p').addClass('a');
 	yQ('p').removeClass('f');

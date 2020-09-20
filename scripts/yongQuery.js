@@ -110,6 +110,17 @@
 			})
 		}
 	}
+	yQ.fn.toggleClass = function(className) {
+		if (className) {
+			return this.each(function (i,item) {
+				if (item.classList.value.indexOf(className) > 0) {
+					item.classList.remove(className);
+				} else {
+					item.classList.add(className);
+				}
+			})
+		}
+	}
 	global.yQ = yQ;
 
 })(window);
